@@ -8,4 +8,5 @@
     <string name="admin_settings">Admin settings</string>
     <string name="about">About</string>
     <string name="general">General settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

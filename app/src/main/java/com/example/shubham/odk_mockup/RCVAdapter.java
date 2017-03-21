@@ -3,6 +3,7 @@ package com.example.shubham.odk_mockup;
 import android.content.Context;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,14 @@ public class RCVAdapter extends RecyclerView.Adapter<RCVAdapter.MyHolder> {
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         holder.formName.setText(mData.get(position).getFormName());
+        if(mData.get(position).getFormStatus().equals("Finalized")){
+            holder.formStatus.setTextColor(ContextCompat.getColor(mContext,R.color.green));
+            holder.formStatus.setBackground(ContextCompat.getDrawable(mContext,R.drawable.back_final));
+        }else if(mData.get(position).getFormStatus().equals("Sent")){
+            holder.formStatus.setTextColor(ContextCompat.getColor(mContext,R.color.orange));
+            holder.formStatus.setBackground(ContextCompat.getDrawable(mContext,R.drawable.back_sent));
+        }
+
         holder.formStatus.setText(mData.get(position).getFormStatus());
         holder.timestamp.setText(mData.get(position).getTimestamp());
     }
@@ -59,35 +68,6 @@ public class RCVAdapter extends RecyclerView.Adapter<RCVAdapter.MyHolder> {
         }
     }
 
-    public void removeItem(int position) {
-        mData.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(position, mData.size());
-    }
-
-
-    public void onItemRemove(final RecyclerView.ViewHolder viewHolder, final RecyclerView mRecyclerView) {
-
-        final int adapterPosition = viewHolder.getAdapterPosition();
-        final Form mForm = mData.get(adapterPosition);
-
-        Snackbar snackbar = Snackbar
-                .make(mRecyclerView, "Are you sure to delete?", Snackbar.LENGTH_LONG)
-                .setAction("Undo", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        int mAdapterPosition = viewHolder.getAdapterPosition();
-                        mData.add(mAdapterPosition, mForm);
-                        notifyItemInserted(mAdapterPosition);
-                        mRecyclerView.scrollToPosition(mAdapterPosition);
-                        formToremove.remove(mForm);
-                    }
-                });
-        snackbar.show();
-        mData.remove(adapterPosition);
-        notifyItemRemoved(adapterPosition);
-        formToremove.add(mForm);
-    }
 
 
 

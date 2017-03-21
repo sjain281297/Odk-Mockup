@@ -79,14 +79,14 @@ public class AllFragment extends Fragment {
 
 
                     final int adapterPosition = viewHolder.getAdapterPosition();
-                    final Form formItem = data.get(adapterPosition); //mBookItems is an arraylist of mBookAdpater;
+                    final Form formItem = data.get(adapterPosition);
                     Snackbar snackbar = Snackbar
-                            .make(formRecycler, "Delete?", Snackbar.LENGTH_LONG)
+                            .make(formRecycler, "Are you sure you want to delete?", Snackbar.LENGTH_LONG)
                             .setAction("Undo", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     data.add(adapterPosition, formItem);
-                                    adapter.notifyItemInserted(adapterPosition); //mBookAdapter is my Adapter class
+                                    adapter.notifyItemInserted(adapterPosition);
                                     formRecycler.scrollToPosition(adapterPosition);
                                 }
                             });
@@ -113,14 +113,14 @@ public class AllFragment extends Fragment {
                         p.setColor(Color.parseColor("#D32F2F"));
                         RectF background = new RectF((float) itemView.getLeft(), (float) itemView.getTop(), dX,(float) itemView.getBottom());
                         c.drawRect(background,p);
-                        icon = BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_menu_delete);
+                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.dustbin);
                         RectF icon_dest = new RectF((float) itemView.getLeft() + width ,(float) itemView.getTop() + width,(float) itemView.getLeft()+ 2*width,(float)itemView.getBottom() - width);
                         c.drawBitmap(icon,null,icon_dest,p);
                     } else {
                         p.setColor(Color.parseColor("#D32F2F"));
                         RectF background = new RectF((float) itemView.getRight() + dX, (float) itemView.getTop(),(float) itemView.getRight(), (float) itemView.getBottom());
                         c.drawRect(background,p);
-                        icon = BitmapFactory.decodeResource(getResources(), android.R.drawable.ic_menu_delete);
+                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.dustbin);
                         RectF icon_dest = new RectF((float) itemView.getRight() - 2*width ,(float) itemView.getTop() + width,(float) itemView.getRight() - width,(float)itemView.getBottom() - width);
                         c.drawBitmap(icon,null,icon_dest,p);
                     }
