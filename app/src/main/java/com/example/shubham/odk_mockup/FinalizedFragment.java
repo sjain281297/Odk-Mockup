@@ -45,7 +45,7 @@ public class FinalizedFragment extends Fragment {
         data=new ArrayList<>();
         data.add(new Form("Birds","Finalized","6 hours ago"));
         data.add(new Form("Cascading Select Form","Finalized","Nov 5, 2016"));
-        adapter=new RCVAdapter(getContext(),data);
+        adapter=new RCVAdapter(getContext(),data,data);
         formRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -72,7 +72,7 @@ public class FinalizedFragment extends Fragment {
                 final int adapterPosition = viewHolder.getAdapterPosition();
                 final Form formItem = data.get(adapterPosition);
                 Snackbar snackbar = Snackbar
-                        .make(formRecycler, "Are you sure you want to delete?", Snackbar.LENGTH_LONG)
+                        .make(formRecycler, "Item Deleted", Snackbar.LENGTH_LONG)
                         .setAction("Undo", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {

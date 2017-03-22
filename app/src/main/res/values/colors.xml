@@ -7,4 +7,6 @@
     <color name="green">#1ee817</color>
     <color name="transparent">#00ffffff</color>
     <color name="purple">#c1209e</color>
+    <color name="cabColor">#5664BF</color>
+    <color name="darkGrey">#E4E9EB</color>
 </resources>

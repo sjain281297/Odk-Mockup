@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public Fragment getFragment(int pos) {
+        return mSectionsPagerAdapter.getItem(pos);
+    }
+
 
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
