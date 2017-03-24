@@ -1,6 +1,7 @@
 package com.example.shubham.odk_mockup;
 
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -59,8 +60,6 @@ public class AllFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_all, container, false);
         formRecycler=(RecyclerView)v.findViewById(R.id.formRecycler);
         data=new ArrayList<>();
-        data.add(new Form("Birds","","7 hours ago"));
-        data.add(new Form("Biggest of N set","Sent","5 hours ago"));
         data.add(new Form("Birds","Finalized","6 hours ago"));
         data.add(new Form("Cascading Select Form","Finalized","Nov 5, 2016"));
         adapter=new RCVAdapter(getContext(),data,multiselect_list);
@@ -291,9 +290,15 @@ public class AllFragment extends Fragment {
                         Toast.makeText(getActivity().getApplicationContext(), "Delete Click", Toast.LENGTH_SHORT).show();
                     }
                     return true;
-                default:
-                    return false;
+                case R.id.action_forward:
+                    ProgressDialog progressDialog=new ProgressDialog(getActivity());
+                    progressDialog.setIndeterminate(true);
+                    progressDialog.setMessage("Sending forms 1 of 1");
+                    progressDialog.show();
+                    return true;
             }
+
+            return true;
         }
 
         @Override

@@ -43,9 +43,13 @@ public class FinalizedFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_all, container, false);
         formRecycler=(RecyclerView)v.findViewById(R.id.formRecycler);
         data=new ArrayList<>();
-        data.add(new Form("Birds","Finalized","6 hours ago"));
+        data.add(new Form("Birds","","7 hours ago"));
         data.add(new Form("Cascading Select Form","Finalized","Nov 5, 2016"));
-        adapter=new RCVAdapter(getContext(),data,data);
+        data.add(new Form("Birds","Finalized","6 hours ago"));
+        data.add(new Form("Biggest of N set","Sent","5 hours ago"));
+
+
+        adapter=new RCVAdapter(getContext(),data,null);
         formRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);

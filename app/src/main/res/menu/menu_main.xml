@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.shubham.odk_mockup.MainActivity">
-    <item android:icon="@android:drawable/ic_menu_search"
+    <item android:icon="@drawable/search"
         app:showAsAction="always"/>
     <item
         android:title="@string/about"

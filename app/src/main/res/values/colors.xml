@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorAccent">#FF4081</color>
     <color name="orange">#ea671c</color>
-    <color name="green">#1ee817</color>
+    <color name="green">#0daa15</color>
     <color name="transparent">#00ffffff</color>
     <color name="purple">#c1209e</color>
-    <color name="cabColor">#5664BF</color>
-    <color name="darkGrey">#E4E9EB</color>
+    <color name="cabColor">#ad42f4</color>
+    <color name="darkGrey">#eff1f4</color>
 </resources>

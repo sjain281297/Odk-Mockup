@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group>
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/all"
+            android:title="All Forms" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/final_form"
+            android:title="Finalized Forms" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/sent"
+            android:title="Sent Forms" />
+    </group>
+
+
+
+
+    <item android:id="@+id/other"
+        android:title="Other">
+    <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/about"
+                android:title="About" />
+    </menu>
+
+    </item>
+
+
+</menu>
