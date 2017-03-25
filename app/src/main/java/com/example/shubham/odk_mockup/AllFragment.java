@@ -60,8 +60,16 @@ public class AllFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_all, container, false);
         formRecycler=(RecyclerView)v.findViewById(R.id.formRecycler);
         data=new ArrayList<>();
+        String type=getArguments().getString("Type","All");
+        if(type.equals("Finalized")){
         data.add(new Form("Birds","Finalized","6 hours ago"));
         data.add(new Form("Cascading Select Form","Finalized","Nov 5, 2016"));
+        } else {
+            data.add(new Form("Birds","","7 hours ago"));
+            data.add(new Form("Cascading Select Form","Finalized","Nov 5, 2016"));
+            data.add(new Form("Birds","Finalized","6 hours ago"));
+            data.add(new Form("Biggest of N set","Sent","5 hours ago"));
+        }
         adapter=new RCVAdapter(getContext(),data,multiselect_list);
         formRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());

@@ -62,26 +62,7 @@ public class RCVAdapter extends RecyclerView.Adapter<RCVAdapter.MyHolder> {
         ColorGenerator generator = ColorGenerator.MATERIAL; // or use DEFAULT
 // generate random color
         int color1 = generator.getRandomColor();
-        TextDrawable drawable2 = null;
-        switch (position){
-            case 0:
-                drawable2 = TextDrawable.builder()
-                        .buildRound("B", color1);
-                break;
-            case 1:
-                drawable2 = TextDrawable.builder()
-                        .buildRound("C", color1);
-                break;
-            case 2:
-                drawable2 = TextDrawable.builder()
-                        .buildRound("B", color1);
-                break;
-            case 3:
-                drawable2 = TextDrawable.builder()
-                        .buildRound("B", color1);
-                break;
-
-        }
+        TextDrawable drawable2 = TextDrawable.builder().buildRound(String.valueOf(holder.formName.getText().charAt(0)),color1);
 
         holder.img.setImageDrawable(drawable2);
 

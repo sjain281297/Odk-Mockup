@@ -115,10 +115,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class b
+            Bundle b=new Bundle();
+            AllFragment fragment=new AllFragment();
             if(position==0){
-                return new FinalizedFragment();
+                b.putString("Type","All");
+                fragment.setArguments(b);
+                return fragment;
             }else{
-                return new AllFragment();
+                b.putString("Type","Finalized");
+                fragment.setArguments(b);
+                return fragment;
             }
         }
 
